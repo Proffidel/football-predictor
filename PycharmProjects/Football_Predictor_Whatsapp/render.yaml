@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: football_predictor_whatsapp
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python predictor.py
+    envVars:
+      - key: API_KEY
+        sync: false
+      - key: YOUR_WHATSAPP
+        sync: false
